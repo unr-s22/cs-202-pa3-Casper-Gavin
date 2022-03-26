@@ -1,6 +1,8 @@
 #include "Account.h"
 
-Account::Account(Money money){}
+Account::Account(Money money){
+    mMoney = money;
+}
 
 void Account::makeDeposit(Money money){
     changes.push_back(money);
@@ -14,18 +16,21 @@ void Account::makeWithdrawl(Money money){
     update = 1;
 }
 
-void Account::updateBalance(Money money){
+void Account::updateBalance(){
     if(update==1){
         for(Money m : changes){
             int i = 0;
             if(changeType.at(i)=="withdrawl"){
-                money = money - m;
+                mMoney = mMoney - m;
+                numWithdrawls++;
             } else {
-                money = money + m;
+                mMoney = mMoney + m;
+                numDeposits++;
             }
             i++;
         }
     }
     changes.clear();
     changeType.clear();
+    update = 0;
 }
