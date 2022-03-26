@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 #ifndef MONEY_H
 #define MONEY_H
 
-=======
->>>>>>> cd488f29b6c73d9530835e3196d728a680c766e0
 #include <iostream>
 #include <ostream>
 
@@ -86,10 +83,7 @@ std::cout << m << std::endl;*/
         return os;
     }
 
-<<<<<<< HEAD
+
 };
 
 #endif
-=======
-};
->>>>>>> cd488f29b6c73d9530835e3196d728a680c766e0
