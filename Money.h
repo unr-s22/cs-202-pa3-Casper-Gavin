@@ -24,6 +24,7 @@ public:
             cents = c;
         }
     }
+//'this' is to be used for the math overloaders
     Money(){
         this -> dollars = 0;
         this -> cents = 0;
@@ -33,7 +34,7 @@ public:
         this -> dollars = dollars;
         this -> cents = cents;
     }
-
+//overloads of all the relational operators
     friend bool operator == (const Money &lhs, const Money &rhs){
         return (lhs.dollars==rhs.dollars&&lhs.cents==rhs.cents);
     }
@@ -57,7 +58,7 @@ public:
     friend bool operator != (const Money &lhs, const Money &rhs){
         return (lhs.dollars!=rhs.dollars&&lhs.cents!=rhs.cents);
     }
-
+//overloads of math operators
     Money operator+(const Money &all){
         Money add;
         add.dollars = this->dollars + all.dollars;
@@ -71,7 +72,9 @@ public:
         sub.cents = this->cents - all.cents;
         return sub;
     }
-
+/*overload of stream operators to allow proper formatting in main, print using:
+Money m(xxx,xx);
+std::cout << m << std::endl;*/
     friend std::ostream& operator<<(std::ostream &os, const Money &m){
         os << '$' << m.dollars << '.' << m.cents;
         return os;
