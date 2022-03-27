@@ -4,7 +4,10 @@
 
 int main(){
     Money m(100,10);
-    std::cout << m << std::endl;
+    Account rhsAcc(m);
+    Account account = rhsAcc;
+    std::cout << account << std::endl;
+
 
     return 0;
 };
