@@ -10,21 +10,26 @@ class Account : public Money{
 private:
     std::vector<Money> changes;
     std::vector<std::string> changeType;
+    std::vector<Money> balance;
 
-    bool update = 0;
+    bool update = false;
 
     Money mMoney;
 
     int numDeposits = 0;
     int numWithdrawls = 0;
 public:
-    Account(Money);
+    Account(const Money& money); 
 
-    void makeDeposit(Money);
-    void makeWithdrawl(Money);
+    void makeDeposit(const Money& money);
+    void makeWithdrawl(const Money& money);
     void updateBalance();
 
-    friend std::ostream& operator << (std::ostream &out, const Account& rhsAcc){
+    friend std::ostream& operator << (std::ostream &out, Account rhsAcc){
+        if(rhsAcc.update == true){
+            rhsAcc.updateBalance();
+            rhsAcc.update = false;
+            }
         out << "Account Details" << std::endl;
         out << "--------------------------" << std::endl;
         out << "Current Balance: " << rhsAcc.mMoney << std::endl;

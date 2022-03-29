@@ -8,6 +8,7 @@ class Money{
 private:
     int dollars, cents;
 public:
+    friend class Account; 
 //getters
     int getDollars() const{
         return dollars;

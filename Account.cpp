@@ -1,35 +1,36 @@
 #include "Account.h"
 
-Account::Account(Money money){
+Account::Account(const Money& money){
     mMoney = money;
 }
 
-void Account::makeDeposit(Money money){
+void Account::makeDeposit(const Money& money){
     changes.push_back(money);
     changeType.push_back("deposit");
-    update = 1;
+    update = true;
+    numDeposits++;
 }
 
-void Account::makeWithdrawl(Money money){
+void Account::makeWithdrawl(const Money& money){
     changes.push_back(money);
     changeType.push_back("withdrawl");
-    update = 1;
+    update = true;
+    numWithdrawls++;
 }
 
 void Account::updateBalance(){
-    if(update==1){
         for(Money m : changes){
-            int i = 0;
+            int i = 0; 
             if(changeType.at(i)=="withdrawl"){
                 mMoney = mMoney - m;
-                numWithdrawls++;
+                
             } else {
                 mMoney = mMoney + m;
-                numDeposits++;
+                
             }
             i++;
         }
-    }
+    
     changes.clear();
     changeType.clear();
     update = 0;
