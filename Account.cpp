@@ -7,35 +7,33 @@ Account::Account(Money money){
 void Account::makeDeposit(Money money){
     changes.push_back(money);
     changeType.push_back("deposit");
-    update = true;
+    update = 1;
 }
 
 void Account::makeWithdrawl(Money money){
     changes.push_back(money);
     changeType.push_back("withdrawl");
-    update = true;
+    update = 1;
 }
 
 void Account::updateBalance(){
     if(update==1){
         for(Money m : changes){
-            int i = 0;
-            if(changeType.at(i)=="withdrawl"){
+            if(changeType.at(iCount)=="withdrawl"){
                 mMoney = mMoney - m;
                 numWithdrawls++;
+                iCount++;
             } else {
                 mMoney = mMoney + m;
                 numDeposits++;
+                iCount++;
             }
-            i++;
         }
+        update = 0;
     }
-    update = false;
 }
 
 void Account::reset(){
     changes.clear();
     changeType.clear();
 }
-
-
