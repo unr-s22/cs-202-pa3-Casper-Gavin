@@ -30,7 +30,12 @@ void Account::updateBalance(){
             i++;
         }
     }
-    //changes.clear();
-    //changeType.clear();
     update = 0;
+}
+
+void Account::reset(){
+    changes.clear();
+    changeType.clear();
+    numDeposits = 0;
+    numWithdrawls = 0;
 }
