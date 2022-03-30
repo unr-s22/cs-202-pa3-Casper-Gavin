@@ -10,34 +10,17 @@ private:
 public:
     friend class Account; 
 //getters
-    int getDollars() const{
-        return dollars;
-    }
-    int getCents() const{
-        return cents;
-    }
-//setters
-    void setDollars(int d){
-            if(d >= 0){
-                dollars = d;
-            }
-        }
-        
-    void setCents(int c){
-        if(c >= 0 && c <= 99){
-            cents = c;
-        }
-    }
-//'this' is to be used for the math overloaders
-    Money(){
-        this -> dollars = 0;
-        this -> cents = 0;
-    }
+    int getDollars() const;
+    int getCents() const;
 
-    Money(int dollars, int cents){
-        this -> dollars = dollars;
-        this -> cents = cents;
-    }
+//setters
+    void setDollars(int d);
+    void setCents(int c);
+
+//'this' is to be used for the math overloaders
+    Money();
+    Money(int dollars, int cents);
+    
 //overloads of all the relational operators
     friend bool operator == (const Money &lhs, const Money &rhs){
         return (lhs.dollars==rhs.dollars&&lhs.cents==rhs.cents);
