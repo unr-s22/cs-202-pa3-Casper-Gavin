@@ -26,3 +26,36 @@ Money::Money(int dollars, int cents){
     this -> dollars = dollars;
     this -> cents = cents;
 }
+
+bool operator == (const Money &lhs, const Money &rhs){
+        return (lhs.dollars==rhs.dollars&&lhs.cents==rhs.cents);
+    }
+
+bool operator < (const Money &lhs, const Money &rhs){
+        return (lhs.dollars<rhs.dollars&&lhs.cents<rhs.cents);
+    }
+
+bool operator > (const Money &lhs, const Money &rhs){
+        return (lhs.dollars>rhs.dollars&&lhs.cents>rhs.cents);
+    }
+
+bool operator >= (const Money &lhs, const Money &rhs){
+        return (lhs.dollars>=rhs.dollars&&lhs.cents>=rhs.cents);
+    }
+
+bool operator <= (const Money &lhs, const Money &rhs){
+        return (lhs.dollars<=rhs.dollars&&lhs.cents<=rhs.cents);
+    }
+
+bool operator != (const Money &lhs, const Money &rhs){
+        return (lhs.dollars!=rhs.dollars&&lhs.cents!=rhs.cents);
+    }
+
+
+
+
+
+std::ostream& operator<<(std::ostream &os, const Money &m){
+        os << '$' << m.dollars << '.' << m.cents;
+        return os;
+    }
