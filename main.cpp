@@ -3,10 +3,10 @@
 
 int main(){
     Money m(300,23);
-
     Account rhsAcc(m);
-    //Account account = rhsAcc;
+
     std::cout << rhsAcc << std::endl;
+
     Money d1(200,00);
     Money d2(300,24);
     Money d3(501,22);
@@ -16,6 +16,7 @@ int main(){
     rhsAcc.updateBalance();
 
     std::cout << rhsAcc << std::endl;
+    rhsAcc.reset();
 
     Money w1(300,10);
     Money w2(201,34);
@@ -24,6 +25,15 @@ int main(){
     rhsAcc.updateBalance();
 
     std::cout << rhsAcc << std::endl;
+    rhsAcc.reset();
+
+    Money m2(100,20);
+    Money n2(50,10);
+    if(m2 > n2){
+        std::cout << "The 1st money amount is more than the second." <<  std::endl;
+    } else {
+        std::cout << "The 1st money amount is not more than the second." <<  std::endl;
+    }   
     
     return 0;
 }
