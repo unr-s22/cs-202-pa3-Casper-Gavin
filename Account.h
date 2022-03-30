@@ -23,6 +23,7 @@ public:
     void makeDeposit(Money);
     void makeWithdrawl(Money);
     void updateBalance();
+    void reset();
 
     friend std::ostream& operator << (std::ostream &out, const Account& rhsAcc){
         out << "Account Details" << std::endl;
@@ -47,9 +48,7 @@ public:
                 out << "(" << j << ")" << rhsAcc.changes.at(i) << std::endl;
                 j++;
             }
-        }
-        changes.clear();
-        changeType.clear();
+        }     
         return out;
     }
 };
