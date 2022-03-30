@@ -7,13 +7,13 @@ Account::Account(Money money){
 void Account::makeDeposit(Money money){
     changes.push_back(money);
     changeType.push_back("deposit");
-    update = 1;
+    update = true;
 }
 
 void Account::makeWithdrawl(Money money){
     changes.push_back(money);
     changeType.push_back("withdrawl");
-    update = 1;
+    update = true;
 }
 
 void Account::updateBalance(){
@@ -30,12 +30,12 @@ void Account::updateBalance(){
             i++;
         }
     }
-    update = 0;
+    update = false;
 }
 
 void Account::reset(){
     changes.clear();
     changeType.clear();
-    numDeposits = 0;
-    numWithdrawls = 0;
 }
+
+

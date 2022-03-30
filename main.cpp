@@ -3,29 +3,29 @@
 
 int main(){
     Money m(300,23);
-    Account rhsAcc(m);
+    Account account(m);
 
-    std::cout << rhsAcc << std::endl;
+    std::cout << account << std::endl;
 
     Money d1(200,00);
     Money d2(300,24);
     Money d3(501,22);
-    rhsAcc.makeDeposit(d1);
-    rhsAcc.makeDeposit(d2);
-    rhsAcc.makeDeposit(d3);
-    rhsAcc.updateBalance();
+    account.makeDeposit(d1);
+    account.makeDeposit(d2);
+    account.makeDeposit(d3);
+    account.updateBalance();
 
-    std::cout << rhsAcc << std::endl;
-    rhsAcc.reset();
+    std::cout << account << std::endl;
+    account.reset();
 
     Money w1(300,10);
     Money w2(201,34);
-    rhsAcc.makeWithdrawl(w1);
-    rhsAcc.makeWithdrawl(w2);
-    rhsAcc.updateBalance();
+    account.makeWithdrawl(w1);
+    account.makeWithdrawl(w2);
+    account.updateBalance();
 
-    std::cout << rhsAcc << std::endl;
-    rhsAcc.reset();
+    std::cout << account << std::endl;
+    account.reset();
 
     Money m2(100,20);
     Money n2(50,10);

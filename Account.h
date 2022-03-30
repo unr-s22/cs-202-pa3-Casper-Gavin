@@ -11,7 +11,8 @@ private:
     std::vector<Money> changes;
     std::vector<std::string> changeType;
 
-    bool update = 0;
+
+    bool update = false;
 
     Money mMoney;
 
@@ -25,27 +26,27 @@ public:
     void updateBalance();
     void reset();
 
-    friend std::ostream& operator << (std::ostream &out, const Account& rhsAcc){
+    friend std::ostream& operator << (std::ostream &out, const Account& account){
         out << "Account Details" << std::endl;
         out << "--------------------------" << std::endl;
-        out << "Current Balance: " << rhsAcc.mMoney << std::endl;
+        out << "Current Balance: " << account.mMoney << std::endl;
         out << "--------------------------" << std::endl;
-        out << "Number of Deposits: " << rhsAcc.numDeposits << std::endl;
+        out << "Number of Deposits: " << account.numDeposits << std::endl;
         out << "--------------------------" << std::endl;
         int j = 1;
-        for(int i=0; i<rhsAcc.changes.size(); i++){
-            if(rhsAcc.changeType.at(i)=="deposit"){
-                out << "(" << j << ")" << rhsAcc.changes.at(i) << std::endl;
+        for(int i=0; i<account.changes.size(); i++){
+            if(account.changeType.at(i)=="deposit"){
+                out << "(" << j << ")" << account.changes.at(i) << std::endl;
                 j++;
             }
         }
         j=1;
         out << "--------------------------" << std::endl;
-        out << "Number of Withdrawls: " << rhsAcc.numWithdrawls << std::endl;
+        out << "Number of Withdrawls: " << account.numWithdrawls << std::endl;
         out << "--------------------------" << std::endl;
-        for(int i=0; i<rhsAcc.changes.size(); i++){
-            if(rhsAcc.changeType.at(i)=="withdrawl"){
-                out << "(" << j << ")" << rhsAcc.changes.at(i) << std::endl;
+        for(int i=0; i<account.changes.size(); i++){
+            if(account.changeType.at(i)=="withdrawl"){
+                out << "(" << j << ")" << account.changes.at(i) << std::endl;
                 j++;
             }
         }     
