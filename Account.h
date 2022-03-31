@@ -25,7 +25,6 @@ public:
     void makeDeposit(Money);
     void makeWithdrawl(Money);
     void updateBalance();
-    void reset();
 
     friend std::ostream& operator << (std::ostream &out, const Account& rhsAcc){
         out << "Account Details" << std::endl;
