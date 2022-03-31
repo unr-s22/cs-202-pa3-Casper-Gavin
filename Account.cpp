@@ -18,22 +18,16 @@ void Account::makeWithdrawl(Money money){
 
 void Account::updateBalance(){
     if(update==1){
-        for(Money m : changes){
+        while(iCount < changes.size()){
             if(changeType.at(iCount)=="withdrawl"){
-                mMoney = mMoney - m;
+                mMoney = mMoney - changes.at(iCount);
                 numWithdrawls++;
-                iCount++;
             } else {
-                mMoney = mMoney + m;
+                mMoney = mMoney + changes.at(iCount);
                 numDeposits++;
-                iCount++;
             }
+            iCount++;
         }
         update = 0;
     }
-}
-
-void Account::reset(){
-    changes.clear();
-    changeType.clear();
 }
