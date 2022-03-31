@@ -26,24 +26,28 @@ public:
     void makeWithdrawl(Money);
     void updateBalance();
 
-    friend std::ostream& operator << (std::ostream &out, const Account& rhsAcc){
+    friend std::ostream& operator << (std::ostream &out, const Account& account){
         out << "Account Details" << std::endl;
         out << "--------------------------" << std::endl;
-        out << "Current Balance: " << rhsAcc.mMoney << std::endl;
+        out << "Current Balance: " << account.mMoney << std::endl;
         out << "--------------------------" << std::endl;
-        out << "Number of Deposits: " << rhsAcc.numDeposits << std::endl;
+        out << "Number of Deposits: " << account.numDeposits << std::endl;
         out << "--------------------------" << std::endl;
-        for(int i=0; i<rhsAcc.changes.size(); i++){
-            if(rhsAcc.changeType.at(i)=="deposit"){
-                out << "(" << i+1 << ")" << rhsAcc.changes.at(i) << std::endl;
+        int j = 1;
+        for(int i=0; i<account.changes.size(); i++){
+            if(account.changeType.at(i)=="deposit"){
+                out << "(" << j << ")" << account.changes.at(i) << std::endl;
+                j++;
             }
         }
         out << "--------------------------" << std::endl;
-        out << "Number of Withdrawls: " << rhsAcc.numWithdrawls << std::endl;
+        out << "Number of Withdrawls: " << account.numWithdrawls << std::endl;
         out << "--------------------------" << std::endl;
-        for(int i=0; i<rhsAcc.changes.size(); i++){
-            if(rhsAcc.changeType.at(i)=="withdrawl"){
-                out << "(" << i+1 << ")" << rhsAcc.changes.at(i) << std::endl;
+        j = 1;
+        for(int i=0; i<account.changes.size(); i++){
+            if(account.changeType.at(i)=="withdrawl"){
+                out << "(" << j << ")" << account.changes.at(i) << std::endl;
+                j++;
             }
         }     
         return out;
