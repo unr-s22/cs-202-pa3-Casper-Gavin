@@ -17,7 +17,7 @@ private:
 
     int numDeposits = 0;
     int numWithdrawls = 0;
-
+    //permanent counter
     int iCount = 0;
 public:
     Account(Money);
