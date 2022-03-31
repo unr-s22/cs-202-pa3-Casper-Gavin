@@ -15,7 +15,7 @@ void Account::makeWithdrawl(Money money){
     changeType.push_back("withdrawl");
     update = 1;
 }
-
+//combines deposits and withdrawls
 void Account::updateBalance(){
     if(update==1){
         while(iCount < changes.size()){
