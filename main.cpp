@@ -16,7 +16,6 @@ int main(){
     rhsAcc.updateBalance();
 
     std::cout << rhsAcc << std::endl;
-    //rhsAcc.reset();
 
     Money w1(300,10);
     Money w2(201,34);
@@ -25,7 +24,6 @@ int main(){
     rhsAcc.updateBalance();
 
     std::cout << rhsAcc << std::endl;
-    //rhsAcc.reset();
 
     Money m2(100,20);
     Money n2(50,10);
