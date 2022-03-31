@@ -25,13 +25,38 @@ int main(){
 
     std::cout << account << std::endl;
 
-    Money m2(100,20);
-    Money n2(50,10);
-    if(m2 > n2){
-        std::cout << "The 1st money amount is more than the second." <<  std::endl;
+    Money m1(100,13);
+    Money m2(321,48);
+    if(m1 > m2){
+        std::cout << "Money one is greater than Money two." <<  std::endl;
     } else {
-        std::cout << "The 1st money amount is not more than the second." <<  std::endl;
+        std::cout << "Money one is not greater than Money two." <<  std::endl;
     }   
+    if(m1 < m2){
+        std::cout << "Money one is less than Money two." <<  std::endl;
+    } else {
+        std::cout << "Money one is not less than Money two." <<  std::endl;
+    }   
+    if(m1 <= m2){
+        std::cout << "Money one is less than or equal to Money two." <<  std::endl;
+    } else {
+        std::cout << "Money one is not less than or equal to Money two." <<  std::endl;
+    }   
+    if(m1 >= m2){
+        std::cout << "Money one is greater than or equal to Money two." <<  std::endl;
+    } else {
+        std::cout << "Money one is not greater than or equal to Money two." <<  std::endl;
+    }
+    if(m1 != m2){
+        std::cout << "Money one is not equal to Money two." <<  std::endl;
+    } else {
+        std::cout << "Money one is equal to Money two." <<  std::endl;
+    }
+    if(m1 == m2){
+        std::cout << "Money one is equal to Money two." <<  std::endl;
+    } else {
+        std::cout << "Money one is not equal to Money two." <<  std::endl;
+    }
     
     return 0;
 }
